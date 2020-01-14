@@ -1,0 +1,37 @@
+{
+  "name": "practice-blog",
+  "version": "1.0.0",
+  "description": "webpack practice",
+  "main": "index.js",
+  "dependencies": {
+    "handlebars": "^4.7.2",
+    "handlebars-loader": "^1.7.1",
+    "html-loader": "^0.5.5",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "csv-loader": "^3.0.2",
+    "file-loader": "^5.0.2",
+    "style-loader": "^1.1.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "xml-loader": "^1.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengshulu/Practice-Blog.git"
+  },
+  "author": "mengshuLu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mengshulu/Practice-Blog/issues"
+  },
+  "homepage": "https://github.com/mengshulu/Practice-Blog#readme"
+}
