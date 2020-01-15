@@ -1,64 +1,25 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+  mode: 'development',
+  entry: {
+    app: './src/index.js',
+    print: './src/print.js'
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-        'style-loader',
-        'css-loader',
-        ],
-      },
-      {
-        test: /\.styl$/,
-        use: [
-            'style-loader',
-            'css-loader',
-            'stylus-loader',
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif|jpeg)$/,
-        use: [
-            'file-loader',
-        ],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader',
-        ],
-      },
-      {
-        test: /\.(csv|tsv)$/,
-        use: [
-          'csv-loader',
-        ],
-      },
-      {
-        test: /\.xml$/,
-        use: [
-          'xml-loader',
-        ],
-      },
-      { 
-        test: /\.(handlebars|hbs)$/,
-        use: [
-            "handlebars-loader",
-        ],
-      },
-      { 
-        test: /\.html$/,
-        use: [
-            "html-loader",
-        ],
-      },
-    ],
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'DogggggHot',
+    }),
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
 };
