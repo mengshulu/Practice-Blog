@@ -6,7 +6,8 @@ module.exports = {
   mode: 'development',
   entry: {
     app: './src/index.js',
-    print: './src/print.js'
+    print: './src/print.js',
+    another: './src/another-module.js',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -21,5 +22,10 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 };
