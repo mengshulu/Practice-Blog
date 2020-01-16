@@ -5,13 +5,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/index.js',
+    main: './src/index.js',
     print: './src/print.js',
-    another: './src/another-module.js',
   },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
+    hot: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -24,8 +24,15 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
     },
   },
 };
