@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "webpack practice",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js"
+  },
   "dependencies": {
     "handlebars": "^4.7.2",
     "handlebars-loader": "^1.7.1",
@@ -21,13 +27,8 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2",
     "xml-loader": "^1.2.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch",
-    "build": "webpack",
-    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
