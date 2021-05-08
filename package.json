@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --open --config webpack.dev.js"
   },
   "dependencies": {
-    "handlebars": "^4.7.2",
+    "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.1",
     "html-loader": "^0.5.5",
     "lodash": "^4.17.15"
